@@ -178,6 +178,11 @@ PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
     device/google/crosshatch/crosshatch/overlay-custom/frameworks/base/packages/overlays/NoCutoutOverlay
 endif
 
+ifeq ($(filter crosshatch,$(TARGET_DEVICE)),)
+PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
+    device/google/crosshatch/crosshatch/overlay-custom/frameworks/base/packages/overlays/NoCutoutOverlay
+endif
+
 # Perf
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.perf@1.0 \
