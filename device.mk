@@ -76,12 +76,6 @@ ifeq ($(wildcard vendor/google_devices/crosshatch/proprietary/device-vendor-cros
     BUILD_WITHOUT_VENDOR := true
 endif
 
-ifeq ($(TARGET_PREBUILT_KERNEL),)
-    LOCAL_KERNEL := device/google/crosshatch-kernel/Image.lz4
-else
-    LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
-endif
-
 PRODUCT_CHARACTERISTICS := nosdcard
 PRODUCT_SHIPPING_API_LEVEL := 28
 
