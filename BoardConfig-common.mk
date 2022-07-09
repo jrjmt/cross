@@ -38,6 +38,9 @@ TARGET_2ND_CPU_VARIANT_RUNTIME := kryo385
 TARGET_BOARD_COMMON_PATH := device/google/crosshatch/sdm845
 
 BUILD_BROKEN_DUP_RULES := true
+BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
+BUILD_BROKEN_USES_BUILD_COPY_HEADERS := true
+BUILD_BROKEN_VINTF_PRODUCT_COPY_FILES := true
 
 BOARD_KERNEL_CMDLINE += console=ttyMSM0,115200n8 androidboot.console=ttyMSM0 printk.devkmsg=on
 BOARD_KERNEL_CMDLINE += msm_rtb.filter=0x237
@@ -57,7 +60,7 @@ BOARD_BOOT_HEADER_VERSION := 2
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 
 # DTBO partition definitions
-BOARD_PREBUILT_DTBOIMAGE := TARGET_NEEDS_DTBOIMAGE := true
+TARGET_NEEDS_DTBOIMAGE := true
 BOARD_DTBOIMG_PARTITION_SIZE := 8388608
 
 TARGET_NO_KERNEL := false
@@ -299,3 +302,5 @@ TARGET_USES_MKE2FS := true
 # Testing related defines
 BOARD_PERFSETUP_SCRIPT := platform_testing/scripts/perf-setup/b1c1-setup.sh
 -include vendor/google_devices/crosshatch/proprietary/BoardConfigVendor.mk
+
+include device/google/crosshatch/BoardConfigXdroid.mk
